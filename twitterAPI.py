@@ -20,10 +20,19 @@ def twitter1(hashtag, count):
 	search = t.search(q=hashtag, count = count)
 	tweets = search['statuses']
 	count = 0
-	i = 0
 	for tweet in tweets:
 		tweet_date = dt.strptime(tweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y')
 		if date1.date() == tweet_date.date():
 			print tweet['text']
-
-twitter1('#PyLadies', 5)
+twitter1('#BeautifulSoup', 5)
+#'#PyLadies',
+def twitter2(hashtag, count):
+	date1 = datetime.datetime.today()
+	search = t.search(q=hashtag, count = count)
+	tweets = search['statuses']
+	count = 0
+	for tweet in tweets:
+		tweet_date = dt.strptime(tweet['created_at'],'%a %b %d %H:%M:%S +0000 %Y')
+		if date1.date() == tweet_date.date():
+			print tweet['text']
+twitter2('#PyLadies', 5)
